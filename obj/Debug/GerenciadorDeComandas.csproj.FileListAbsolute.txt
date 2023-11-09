@@ -1,0 +1,12 @@
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\bin\Debug\GerenciadorDeComandas.exe.config
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\bin\Debug\GerenciadorDeComandas.exe
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\bin\Debug\GerenciadorDeComandas.pdb
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.csproj.AssemblyReference.cache
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.csproj.SuggestedBindingRedirects.cache
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.Form1.resources
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.Properties.Resources.resources
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.csproj.GenerateResource.cache
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.csproj.CoreCompileInputs.cache
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.exe
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.pdb
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.TelaLogin.resources
