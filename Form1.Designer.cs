@@ -38,6 +38,7 @@
             this.BackgroundImage = global::GerenciadorDeComandas.Properties.Resources.noita_digital_MdmcpX2ofRk_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(437, 483);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";

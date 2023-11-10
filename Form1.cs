@@ -18,7 +18,8 @@ namespace GerenciadorDeComandas
         }
 
         private void Form1_Activated(object sender, EventArgs e)
-        {
+        { 
+
             //Instanciar janela:
             TelaLogin janela = new TelaLogin();
             //Abrir janela:
