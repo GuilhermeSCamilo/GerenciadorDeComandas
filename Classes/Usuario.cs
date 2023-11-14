@@ -41,7 +41,59 @@ namespace GerenciadorDeComandas.Classes
             return tabela;
 
 
-            
+        }
+
+        public DataTable ListarTudo()
+        {
+            string comando = "SELECT id, nome_completo, email FROM usuarios ";
+
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            DataTable tabela = new DataTable();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+
+
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+
+        }
+
+        public bool Cadastrar()
+        {
+
+            string comando = "INSERT INTO usuarios (nome_completo, email, senha) " +
+                    "VALUES (@nome_completo, @email, @senha)";
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@nome_completo", NomeCompleto);
+            cmd.Parameters.AddWithValue("@email", Email);
+            //Obter HASH:
+            string hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
+
+            cmd.Parameters.AddWithValue("@senha", hashsenha);
+            cmd.Prepare();
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+
 
         }
 

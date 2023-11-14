@@ -35,6 +35,8 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblMenu = new System.Windows.Forms.Label();
             this.lblSaudacao = new System.Windows.Forms.Label();
+            this.pcbSair = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSair)).BeginInit();
             this.SuspendLayout();
             // 
             // btnComandas
@@ -77,6 +79,7 @@
             this.btnUsuarios.TabIndex = 3;
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // lblTitulo
             // 
@@ -105,11 +108,23 @@
             this.lblSaudacao.Size = new System.Drawing.Size(0, 13);
             this.lblSaudacao.TabIndex = 6;
             // 
+            // pcbSair
+            // 
+            this.pcbSair.Image = global::GerenciadorDeComandas.Properties.Resources.exit_to_app_icon_137652;
+            this.pcbSair.Location = new System.Drawing.Point(343, 368);
+            this.pcbSair.Name = "pcbSair";
+            this.pcbSair.Size = new System.Drawing.Size(47, 47);
+            this.pcbSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbSair.TabIndex = 7;
+            this.pcbSair.TabStop = false;
+            this.pcbSair.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 427);
+            this.Controls.Add(this.pcbSair);
             this.Controls.Add(this.lblSaudacao);
             this.Controls.Add(this.lblMenu);
             this.Controls.Add(this.lblTitulo);
@@ -122,6 +137,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSair)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +152,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblMenu;
         private System.Windows.Forms.Label lblSaudacao;
+        private System.Windows.Forms.PictureBox pcbSair;
     }
 }

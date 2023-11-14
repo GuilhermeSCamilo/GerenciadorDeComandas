@@ -38,10 +38,10 @@ namespace GerenciadorDeComandas
 
                 usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
                 usuario.Id = (int)resultado.Rows[0]["id"];
-                MessageBox.Show(usuario.NomeCompleto);
+                MessageBox.Show("Bem vindo!!");
                 
                 //Abrir a janela menu:
-                MenuPrincipal janela = new MenuPrincipal();
+                MenuPrincipal janela = new MenuPrincipal(usuario);
 
                 Hide();
                 //Mostrar menu:

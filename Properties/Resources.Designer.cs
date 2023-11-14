@@ -83,6 +83,16 @@ namespace GerenciadorDeComandas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exit_to_app_icon_137652 {
+            get {
+                object obj = ResourceManager.GetObject("exit_to_app_icon_137652", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap noita_digital_MdmcpX2ofRk_unsplash {
             get {
                 object obj = ResourceManager.GetObject("noita-digital-MdmcpX2ofRk-unsplash", resourceCulture);
