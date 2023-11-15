@@ -70,10 +70,41 @@ namespace GerenciadorDeComandas.Views
         {
 
             Classes.Usuario usuario = new Classes.Usuario();
-
+            usuario.Id = IdSelecionado;
             usuario.NomeCompleto = txbNomeEdi.Text;
             usuario.Email = txbEmailEdi.Text;
             usuario.Senha = txbSenhaEdi.Text;
+
+            if (usuario.Editar() == true)
+            {
+                MessageBox.Show("Usuário editado", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Limpar os campos:
+                txbNomeEdi.Clear();
+                txbEmailEdi.Clear();
+                txbSenhaEdi.Clear();
+
+                //Atualizar Tabela:
+                dgvUsuarios.DataSource = usuario.ListarTudo();
+
+                //Atualizar Tabela:
+                dgvUsuarios.DataSource = usuario.ListarTudo();
+
+                lblApagar.Text = "Selecione um usuário para apagar!";
+
+                //Desabilitar grbs:
+                grbApagar.Enabled = false;
+                grbEditar.Enabled = false;
+            }
+            else
+            {
+
+                MessageBox.Show("Falha ao editar usuario", "Falha!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
+
+
 
 
         }
@@ -107,6 +138,41 @@ namespace GerenciadorDeComandas.Views
         private void btnApagar_Click(object sender, EventArgs e)
         {
             
+            Classes.Usuario usuario = new Classes.Usuario();
+            usuario.Id = IdSelecionado;
+            //Remover:
+
+            var r = MessageBox.Show("Tem certeza que deseja remover?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                if (usuario.Apagar() == true)
+                {
+                    MessageBox.Show("Usuário removido","Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    //Limpar os campos:
+                    txbNomeEdi.Clear();
+                    txbEmailEdi.Clear();
+                    txbSenhaEdi.Clear();
+
+                    //Atualizar Tabela:
+                    dgvUsuarios.DataSource = usuario.ListarTudo();
+
+                    lblApagar.Text = "Selecione um usuário para apagar!";
+
+                    //Desabilitar grbs:
+                    grbApagar.Enabled = false;
+                    grbEditar.Enabled = false;
+                }
+                else
+                {
+
+                    MessageBox.Show("Falha ao remover usuario", "Falha!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+
+            }
+
+
         }
     }
 }
