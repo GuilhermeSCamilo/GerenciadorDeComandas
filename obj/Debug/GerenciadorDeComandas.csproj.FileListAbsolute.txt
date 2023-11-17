@@ -50,3 +50,4 @@ C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\obj\Debug\Gerenci
 C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.csproj.CopyComplete
 C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.exe
 C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.pdb
+C:\Users\guilherme.scamilo1\source\repos\GerenciadorDeComandas\obj\Debug\GerenciadorDeComandas.TelaProduto.resources

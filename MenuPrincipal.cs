@@ -15,6 +15,15 @@ namespace GerenciadorDeComandas
 
         //Objetos globais:
         Classes.Usuario usuario= new Classes.Usuario();
+        Classes.Produto produto= new Classes.Produto();
+
+
+
+
+
+
+
+
 
         public MenuPrincipal(Classes.Usuario usuario)
         {
@@ -27,17 +36,47 @@ namespace GerenciadorDeComandas
            
         }
 
+        public MenuPrincipal(Classes.Produto produto)
+        {
+            InitializeComponent();
+            this.produto = produto;
+
+
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+
+
+
+        //Abrir Janela Usuários:
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            //Instanciar janela
+            //Instanciar janela usuarios:
 
             Views.GerenciamentoUsuarios janela = new Views.GerenciamentoUsuarios();
             janela.Show();
+        }
+
+
+
+
+        //Abrir Janela Produtos:
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            //Instanciar janela produtos:
+          
+
+            TelaProduto janelap = new TelaProduto();
+            janelap.Show();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
