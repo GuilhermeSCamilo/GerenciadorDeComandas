@@ -41,6 +41,8 @@
             this.txbNomeModi = new System.Windows.Forms.TextBox();
             this.lblPrecoModi = new System.Windows.Forms.Label();
             this.lblNomeModi = new System.Windows.Forms.Label();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbInserir.SuspendLayout();
             this.grbModificar.SuspendLayout();
@@ -58,21 +60,23 @@
             // 
             // grbInserir
             // 
+            this.grbInserir.Controls.Add(this.lblCategoria);
+            this.grbInserir.Controls.Add(this.cmbCategoria);
             this.grbInserir.Controls.Add(this.btnInserir);
             this.grbInserir.Controls.Add(this.txbPrecoInse);
             this.grbInserir.Controls.Add(this.txbNomeProdutoInse);
             this.grbInserir.Controls.Add(this.lblPreco);
             this.grbInserir.Controls.Add(this.lblNomeProduto);
-            this.grbInserir.Location = new System.Drawing.Point(35, 317);
+            this.grbInserir.Location = new System.Drawing.Point(35, 297);
             this.grbInserir.Name = "grbInserir";
-            this.grbInserir.Size = new System.Drawing.Size(222, 134);
+            this.grbInserir.Size = new System.Drawing.Size(222, 154);
             this.grbInserir.TabIndex = 1;
             this.grbInserir.TabStop = false;
             this.grbInserir.Text = "Inserir Produto:";
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(63, 85);
+            this.btnInserir.Location = new System.Drawing.Point(63, 110);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(96, 38);
             this.btnInserir.TabIndex = 4;
@@ -120,16 +124,16 @@
             this.grbModificar.Controls.Add(this.txbNomeModi);
             this.grbModificar.Controls.Add(this.lblPrecoModi);
             this.grbModificar.Controls.Add(this.lblNomeModi);
-            this.grbModificar.Location = new System.Drawing.Point(271, 317);
+            this.grbModificar.Location = new System.Drawing.Point(271, 297);
             this.grbModificar.Name = "grbModificar";
-            this.grbModificar.Size = new System.Drawing.Size(222, 134);
+            this.grbModificar.Size = new System.Drawing.Size(222, 154);
             this.grbModificar.TabIndex = 5;
             this.grbModificar.TabStop = false;
             this.grbModificar.Text = "Modificar Produto:";
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(63, 85);
+            this.btnModificar.Location = new System.Drawing.Point(63, 110);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(96, 38);
             this.btnModificar.TabIndex = 4;
@@ -169,6 +173,24 @@
             this.lblNomeModi.TabIndex = 0;
             this.lblNomeModi.Text = "Nome Do Produto:";
             // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(107, 86);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(94, 21);
+            this.cmbCategoria.TabIndex = 5;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(49, 89);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(55, 13);
+            this.lblCategoria.TabIndex = 6;
+            this.lblCategoria.Text = "Categoria:";
+            // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,5 +227,7 @@
         private System.Windows.Forms.TextBox txbNomeModi;
         private System.Windows.Forms.Label lblPrecoModi;
         private System.Windows.Forms.Label lblNomeModi;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.ComboBox cmbCategoria;
     }
 }
