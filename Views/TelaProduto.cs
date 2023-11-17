@@ -13,13 +13,31 @@ namespace GerenciadorDeComandas
 {
     public partial class TelaProduto : Form
     {
-        public TelaProduto()
-        {          
+        
+
+
+        public TelaProduto(Classes.Usuario usuario)
+        {
 
             InitializeComponent();
             Classes.Produto produto = new Classes.Produto();
             dgvProdutos.DataSource = produto.ListarProduto();
+
+            InitializeComponent();
+            this.usuario = usuario;
+
+            //Mudar lbl de saudação:
+
+            lblLogado.Text = "Logado como: " + usuario.NomeCompleto;
+            string logado = usuario.NomeCompleto;
+
         }
+
+        
+
+        //Instanciar usuario:
+        Classes.Usuario usuario = new Classes.Usuario();
+        private int logado;
 
         private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -40,7 +58,7 @@ namespace GerenciadorDeComandas
             txbPrecoInse.Text = linha.Cells[2].Value.ToString();
 
 
-            //Instanciar o usuario:
+            //Instanciar o produto:
             Classes.Produto produto = new Classes.Produto();
 
             //Atualizar Tabela:
@@ -56,14 +74,23 @@ namespace GerenciadorDeComandas
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            //Instanciar o usuario:
+            //Instanciar o produto:
             Classes.Produto produto = new Classes.Produto();
-
-
             produto.Nome = txbNomeProdutoInse.Text;
             produto.Preco = txbPrecoInse.Text;
             produto.IdCategoria = 1;
-            produto.IdRespCadastro = 1;
+            
+
+            var resultado = usuario.Logar();
+            usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
+            usuario.Id = (int)resultado.Rows[0]["id"];
+            Classes.Usuario usuarionome = new Classes.Usuario();
+            MessageBox.Show("Produto registrado por: " + usuario.NomeCompleto);
+
+            produto.IdRespCadastro = (int)resultado.Rows[0]["id"];
+
+
+
 
 
             if (produto.Inserir() == true)
@@ -84,9 +111,7 @@ namespace GerenciadorDeComandas
                 MessageBox.Show("Falha ao inserir produto");
 
             }
-           
-
-            
+                     
 
 
         }
@@ -102,7 +127,7 @@ namespace GerenciadorDeComandas
 
             if (produto.Modificar() == true)
             {
-                MessageBox.Show("Usuário editado", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Produto editado", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Limpar os campos:
                 txbNomeModi.Clear();
                 txbPrecoModi.Clear();
@@ -117,7 +142,7 @@ namespace GerenciadorDeComandas
             else
             {
 
-                MessageBox.Show("Falha ao editar usuario", "Falha!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falha ao editar Produto", "Falha!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -129,6 +154,16 @@ namespace GerenciadorDeComandas
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+           
+
+
+
+        }
+
+        private void txbNomeProdutoInse_TextChanged(object sender, EventArgs e)
         {
 
         }

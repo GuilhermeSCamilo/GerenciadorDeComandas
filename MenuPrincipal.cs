@@ -70,7 +70,7 @@ namespace GerenciadorDeComandas
             //Instanciar janela produtos:
           
 
-            TelaProduto janelap = new TelaProduto();
+            TelaProduto janelap = new TelaProduto(usuario);
             janelap.Show();
         }
 

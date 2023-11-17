@@ -30,6 +30,8 @@
         {
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.grbInserir = new System.Windows.Forms.GroupBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.btnInserir = new System.Windows.Forms.Button();
             this.txbPrecoInse = new System.Windows.Forms.TextBox();
             this.txbNomeProdutoInse = new System.Windows.Forms.TextBox();
@@ -41,8 +43,7 @@
             this.txbNomeModi = new System.Windows.Forms.TextBox();
             this.lblPrecoModi = new System.Windows.Forms.Label();
             this.lblNomeModi = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblLogado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbInserir.SuspendLayout();
             this.grbModificar.SuspendLayout();
@@ -74,6 +75,24 @@
             this.grbInserir.TabStop = false;
             this.grbInserir.Text = "Inserir Produto:";
             // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(49, 89);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(55, 13);
+            this.lblCategoria.TabIndex = 6;
+            this.lblCategoria.Text = "Categoria:";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(107, 86);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(94, 21);
+            this.cmbCategoria.TabIndex = 5;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
+            // 
             // btnInserir
             // 
             this.btnInserir.Location = new System.Drawing.Point(63, 110);
@@ -97,6 +116,7 @@
             this.txbNomeProdutoInse.Name = "txbNomeProdutoInse";
             this.txbNomeProdutoInse.Size = new System.Drawing.Size(94, 20);
             this.txbNomeProdutoInse.TabIndex = 2;
+            this.txbNomeProdutoInse.TextChanged += new System.EventHandler(this.txbNomeProdutoInse_TextChanged);
             // 
             // lblPreco
             // 
@@ -173,29 +193,20 @@
             this.lblNomeModi.TabIndex = 0;
             this.lblNomeModi.Text = "Nome Do Produto:";
             // 
-            // cmbCategoria
+            // lblLogado
             // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(107, 86);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(94, 21);
-            this.cmbCategoria.TabIndex = 5;
-            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(49, 89);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(55, 13);
-            this.lblCategoria.TabIndex = 6;
-            this.lblCategoria.Text = "Categoria:";
+            this.lblLogado.AutoSize = true;
+            this.lblLogado.Location = new System.Drawing.Point(13, 3);
+            this.lblLogado.Name = "lblLogado";
+            this.lblLogado.Size = new System.Drawing.Size(0, 13);
+            this.lblLogado.TabIndex = 6;
             // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 491);
+            this.Controls.Add(this.lblLogado);
             this.Controls.Add(this.grbModificar);
             this.Controls.Add(this.grbInserir);
             this.Controls.Add(this.dgvProdutos);
@@ -209,6 +220,7 @@
             this.grbModificar.ResumeLayout(false);
             this.grbModificar.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -229,5 +241,6 @@
         private System.Windows.Forms.Label lblNomeModi;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.Label lblLogado;
     }
 }

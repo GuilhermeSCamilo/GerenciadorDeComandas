@@ -99,8 +99,8 @@ namespace GerenciadorDeComandas.Classes
 
 
             cmd.Prepare();
-            
-            
+
+
             //try
             //{
                 if (cmd.ExecuteNonQuery() == 0)
