@@ -13,5 +13,7 @@ namespace GerenciadorDeComandas.Classes
         public string Nome { get; set; }
 
 
+        
+
     }
 }

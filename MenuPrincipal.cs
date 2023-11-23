@@ -78,5 +78,20 @@ namespace GerenciadorDeComandas
         {
 
         }
+
+        private void btnComandas_Click(object sender, EventArgs e)
+        {
+            Views.GerenciadorComandas janela = new Views.GerenciadorComandas(usuario);
+            janela.Show();
+
+        }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+            //Instanciar janela Caixa:
+
+            Views.Caixa janela = new Views.Caixa(usuario);
+            janela.Show();
+        }
     }
 }

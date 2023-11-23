@@ -21,7 +21,7 @@ namespace GerenciadorDeComandas
 
             InitializeComponent();
             Classes.Produto produto = new Classes.Produto();
-            dgvProdutos.DataSource = produto.ListarProduto();
+            dgvProdutos1.DataSource = produto.ListarProduto();
 
             InitializeComponent();
             this.usuario = usuario;
@@ -41,28 +41,26 @@ namespace GerenciadorDeComandas
 
         private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Obter a linha e armazenar em variável:
-            int linhaselecionada = dgvProdutos.CurrentCell.RowIndex;
+            //Obter a linha:
+            int linhaselecionada = dgvProdutos1.CurrentCell.RowIndex;
 
             //Armazenar os dados da linha selecionada:
-            var linha = dgvProdutos.Rows[linhaselecionada];
+            var linha = dgvProdutos1.Rows[linhaselecionada];
 
-
-            //
-            txbNomeProdutoInse.Text = linha.Cells[1].Value.ToString();
-            txbPrecoInse.Text = linha.Cells[2].Value.ToString();
+            txbNomeModi.Text = linha.Cells[0].Value.ToString();
+            txbPrecoModi.Text = linha.Cells[1].Value.ToString();
 
 
             //Instanciar o produto:
             Classes.Produto produto = new Classes.Produto();
 
             //Atualizar Tabela:
-            dgvProdutos.DataSource = produto.ListarProduto();
+            dgvProdutos1.DataSource = produto.ListarProduto();
 
 
         }
@@ -79,15 +77,7 @@ namespace GerenciadorDeComandas
             produto.Nome = txbNomeProdutoInse.Text;
             produto.Preco = txbPrecoInse.Text;
             produto.IdCategoria = 1;
-            
-
-            var resultado = usuario.Logar();
-            usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
-            usuario.Id = (int)resultado.Rows[0]["id"];
-            Classes.Usuario usuarionome = new Classes.Usuario();
-            MessageBox.Show("Produto registrado por: " + usuario.NomeCompleto);
-
-            produto.IdRespCadastro = (int)resultado.Rows[0]["id"];
+            produto.IdRespCadastro = 1;
 
 
 
@@ -103,7 +93,7 @@ namespace GerenciadorDeComandas
                 txbPrecoInse.Clear();
 
                 //Atualizar Tabela:
-                dgvProdutos.DataSource = produto.ListarProduto();
+                dgvProdutos1.DataSource = produto.ListarProduto();
             }
             else
             {
@@ -134,7 +124,7 @@ namespace GerenciadorDeComandas
                
 
                 //Atualizar Tabela:
-                dgvProdutos.DataSource = produto.ListarProduto();
+                dgvProdutos1.DataSource = produto.ListarProduto();
           
 
                 
@@ -164,6 +154,44 @@ namespace GerenciadorDeComandas
         }
 
         private void txbNomeProdutoInse_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            Classes.Produto produto = new Classes.Produto();           
+            //Remover:
+
+            var r = MessageBox.Show("Tem certeza que deseja remover?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                if (usuario.Apagar() == true)
+                {
+                    MessageBox.Show("Usuário removido", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Limpar os campos:                  
+                    txbPrecoModi.Clear();
+                    txbNomeModi.Clear();
+
+                    //Atualizar Tabela:
+                    dgvProdutos1.DataSource = produto.ListarProduto();
+
+                    
+
+                    
+                }
+                else
+                {
+
+                    MessageBox.Show("Falha ao remover usuario", "Falha!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+
+            }
+        }
+
+        private void TelaProduto_Load(object sender, EventArgs e)
         {
 
         }

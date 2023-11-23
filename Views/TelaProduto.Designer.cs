@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.dgvProdutos1 = new System.Windows.Forms.DataGridView();
             this.grbInserir = new System.Windows.Forms.GroupBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
@@ -44,20 +44,26 @@
             this.lblPrecoModi = new System.Windows.Forms.Label();
             this.lblNomeModi = new System.Windows.Forms.Label();
             this.lblLogado = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
+            this.btnApagar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos1)).BeginInit();
             this.grbInserir.SuspendLayout();
             this.grbModificar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvProdutos
+            // dgvProdutos1
             // 
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(35, 30);
-            this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(458, 231);
-            this.dgvProdutos.TabIndex = 0;
-            this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
-            this.dgvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
+            this.dgvProdutos1.AllowUserToAddRows = false;
+            this.dgvProdutos1.AllowUserToDeleteRows = false;
+            this.dgvProdutos1.AllowUserToResizeColumns = false;
+            this.dgvProdutos1.AllowUserToResizeRows = false;
+            this.dgvProdutos1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProdutos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos1.Location = new System.Drawing.Point(35, 30);
+            this.dgvProdutos1.Name = "dgvProdutos1";
+            this.dgvProdutos1.Size = new System.Drawing.Size(458, 231);
+            this.dgvProdutos1.TabIndex = 0;
+            this.dgvProdutos1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
+            this.dgvProdutos1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
             // 
             // grbInserir
             // 
@@ -201,20 +207,32 @@
             this.lblLogado.Size = new System.Drawing.Size(0, 13);
             this.lblLogado.TabIndex = 6;
             // 
+            // btnApagar
+            // 
+            this.btnApagar.Location = new System.Drawing.Point(220, 470);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(96, 38);
+            this.btnApagar.TabIndex = 7;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 491);
+            this.ClientSize = new System.Drawing.Size(526, 520);
+            this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.lblLogado);
             this.Controls.Add(this.grbModificar);
             this.Controls.Add(this.grbInserir);
-            this.Controls.Add(this.dgvProdutos);
+            this.Controls.Add(this.dgvProdutos1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TelaProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaProduto";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
+            this.Load += new System.EventHandler(this.TelaProduto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos1)).EndInit();
             this.grbInserir.ResumeLayout(false);
             this.grbInserir.PerformLayout();
             this.grbModificar.ResumeLayout(false);
@@ -226,7 +244,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvProdutos;
+        private System.Windows.Forms.DataGridView dgvProdutos1;
         private System.Windows.Forms.GroupBox grbInserir;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblNomeProduto;
@@ -242,5 +260,6 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label lblLogado;
+        private System.Windows.Forms.Button btnApagar;
     }
 }

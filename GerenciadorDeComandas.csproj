@@ -97,6 +97,18 @@
     <Compile Include="TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Caixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Caixa.Designer.cs">
+      <DependentUpon>Caixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GerenciadorComandas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GerenciadorComandas.Designer.cs">
+      <DependentUpon>GerenciadorComandas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TelaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     </Compile>
     <EmbeddedResource Include="TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Caixa.resx">
+      <DependentUpon>Caixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GerenciadorComandas.resx">
+      <DependentUpon>GerenciadorComandas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TelaProduto.resx">
       <DependentUpon>TelaProduto.cs</DependentUpon>
